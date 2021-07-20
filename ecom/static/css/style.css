@@ -1,0 +1,59 @@
+/* These styles are generated from project.scss. */
+
+.alert-debug {
+  color: black;
+  background-color: white;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+
+/* nav bar */
+.navbar {
+  padding: .5rem 0rem!important;
+}
+.navbar-brand{
+  font-size: 22px;
+  padding-top: .5rem!important;
+}
+.navbar-toggler{
+  font-size: 1.25rem!important;
+  border: none;
+  padding: .25rem 0rem!important;
+  z-index: 9998!important;
+  position: relative;
+}
+.icon-nav{
+  margin-top: .8rem!important;
+}
+@media only screen and (max-width: 768px){
+  .navbar{
+    padding: .0rem 0rem!important;
+    margin-top: .4rem;
+  }
+  #navbarMenu{
+    width: 25%!important;
+  }
+  
+}
+.cart-count{
+  position: relative;
+  left: -7px;
+  bottom: 10px;
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 15px;
+  color: #fff;
+  background-color: #007bff;
+  border: 2px solid #fff;
+  padding: 3px;
+  width: 22px;
+  height: 24px;
+  text-align: center;
+
+}

@@ -1,0 +1,22 @@
+{% load static i18n compress%}
+<!-- Le javascript
+    ================================================== -->
+    {# Placed at the top of the document so pages load faster with defer #}
+    {% block javascript %}
+      <!-- Bootstrap JS and its dependencies-->
+      {% compress js %}
+      <script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>{% endcompress %}
+
+      {% compress js %}
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>{% endcompress %}
+
+      {% compress js %}
+      <script src="{% static 'js/popper.min.js' %}"></script>{% endcompress %}
+
+  
+      <!-- Your stuff: Third-party javascript libraries go here -->
+
+      <!-- place project specific Javascript in this file -->{% compress js %}
+      <script src="{% static 'js/project.js' %}"></script>{% endcompress %}
+
+    {% endblock javascript %}

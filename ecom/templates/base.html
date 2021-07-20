@@ -1,0 +1,89 @@
+{% load static i18n compress%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}ecom{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Behold My Awesome Project!">
+    <meta name="author" content="Diev Mambo">
+
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+
+    {% block css %}
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    {% compress css %}<link  rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">{% endcompress %}
+
+    <!-- Your stuff: Third-party CSS libraries go here -->{% compress css %}
+    <!-- This file stores project-specific CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">{% endcompress %}
+    {% endblock %}
+    
+
+  </head>
+
+  <body>
+
+  <div class="container"> 
+    <div class="d-flex justify-content-between" >
+      <div class="d-block d-md-none" id="navbarMenu">
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          {% include 'navbar.html' %}
+        </nav>
+      </div>
+
+      <a class="navbar-brand text-uppercase" href="{% url 'home' %}">ecom</a>
+
+      <div class="d-none d-md-block">
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          {% include 'navbar.html' %}
+        </nav>
+      </div>
+      
+      <ul class="list-inline icon-nav">
+        <li class="list-inline-item"><a href="#">
+          <img src="{% static 'fonts/bootstrap-icons/search.svg' %}" alt="Bootstrap" width="22" height="22"></a?
+        </li>
+        <!--<li class="list-inline-item">
+          <img src="{% static 'fonts/bootstrap-icons/person-check.svg' %}" alt="Bootstrap" width="22" height="22">
+        </li>-->
+        <li class="list-inline-item"><a href="#">
+          <img src="{% static 'fonts/bootstrap-icons/handbag.svg' %}" alt="Bootstrap" width="22" height="22"><span class="badge badge-pill badge-danger cart-count">2</span></a>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  
+
+    <div class="container">
+
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+          {% endfor %}
+      {% endif %}
+
+      {% block content %}
+        <p>Use this document as a way to quick start any new project.</p>
+      {% endblock content %}
+
+    </div> <!-- /container -->
+
+    {% block modal %}{% endblock modal %}
+
+    {% include 'scripts.html' %}
+
+    {% block inline_javascript %}
+    {# Script tags with only code, no src (defer by default) #}
+    {% endblock inline_javascript %}
+  </body>
+</html>
