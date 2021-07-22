@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+<div class="site-section">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <a href="{% url 'users:detail' request.user.username %}">Back to profile</a><br>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Order: #{{ order.reference_number }}
+                    </h5><br>
+                    <h6 class="card-subtitle mb-2 text-muted">Ordered on: {{ order.ordered_date }}</h6><br>
+                    
+                    <div class="table-responsive">
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <th>Product.</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in order.items.all %}
+                                <tr>
+                                    <td>{{ item.size.name }}, {{ item.colour.name }} of {{ item.product.title }} x
+                                        {{ item.quantity }}</td>
+                                    <td>${{ item.get_total_item_price }}</td>
+                                </tr>
+                                {% endfor %}
+                                <tr>
+                                <td>Subtotal</td>
+                                    <td>${{ order.get_subtotal }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>${{ order.get_total }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

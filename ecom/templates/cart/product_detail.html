@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="bg-white py-3">
+    <div class="row">
+        <div class="col-md-12 mb-0">
+            <a href="{% url 'home' %}">{% trans "Home" %}</a>
+            <span class="mx-2 mb-0">/</span>
+            <strong class="text-black">{{ product.title }}</strong>
+        </div>
+    </div>
+</div> <br><br>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-lg-12">
+        <img id="featured" src="{{product.featured.url}}" class="img-fluid">
+        <div class="bs-example">
+          <div id="slide-wrapper">
+            <img id="slideLeft" class="arrow" src = "{% static 'fonts/bootstrap-icons/arrow-left.svg' %}" alt="arrow-left"/>
+            <div id="slider">
+              {% for image in product.image_set.all %}
+              <img class="thumbnail" src="{{image.imageURL}}">
+              {% endfor %}
+            </div>
+            <img id="slideRight" class="arrow" src = "{% static 'fonts/bootstrap-icons/arrow-right.svg' %}" alt="arrow-right"/>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div> 
+        
+  <div class=" col-sm-6">
+    <h1 class="text-black">{{ product.title }}</h1><br>
+    <h5>{{ product.description }}</h5>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit" class="btn btn-primary btn-sm btn-block addtocart" id="addtocart">{% trans "Add to cart" %}</button>
+    </form><br>
+  </div>
+</div><br><br>
+{% endblock content %}

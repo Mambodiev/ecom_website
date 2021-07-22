@@ -6,34 +6,32 @@ from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
 from rest_framework.authtoken.views import obtain_auth_token
+from django.urls import path, include
+from core import views
+from django.utils.translation import gettext_lazy as _
+
+
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path('', views.HomeViews.as_view(), name='home'),
+    path('contact/', views.ContactView.as_view(), name='contact'),
     path(
         "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     ),
-    # Django Admin, use {% url 'admin:index' %}
+    path("cart/", include("cart.urls", namespace='cart')),
     path(settings.ADMIN_URL, admin.site.urls),
-    # User management
+    path("staff/", include("staff.urls", namespace="staff")),
     path("users/", include("ecom.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
+    path('accounts/', include('allauth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
-    # Static file serving when using Gunicorn + Uvicorn for local web socket development
     urlpatterns += staticfiles_urlpatterns()
-
-# API URLS
 urlpatterns += [
-    # API base url
     path("api/", include("config.api_router")),
-    # DRF auth token
     path("auth-token/", obtain_auth_token),
 ]
 
 if settings.DEBUG:
-    # This allows the error pages to be debugged during development, just visit
-    # these url in browser to see how these error pages look like.
     urlpatterns += [
         path(
             "400/",

@@ -52,6 +52,8 @@ coverage.xml
 
 # Django stuff:
 staticfiles/
+media
+static_root
 
 # Sphinx documentation
 docs/_build/
@@ -69,7 +71,7 @@ target/
 .venv
 env/
 venv/
-ENV/M@diev3991
+# ENV/M@diev3991
 
 
 # Rope project settings

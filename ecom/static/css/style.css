@@ -57,3 +57,26 @@
   text-align: center;
 
 }
+
+/* footer */
+.footer-icon{
+  width: 22px;
+  height:22px;
+}
+.visa{
+  margin-right: -0.8em!important;
+}
+.payment-img{
+  width:80px;
+  height:50px;
+}
+
+@media only screen and (max-width: 768px){
+  .payment-img{
+    width: 50px!important;
+    height:40px!important;
+  }
+}
+.page-link{
+  border-radius: 50%!important;
+}
