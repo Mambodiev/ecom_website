@@ -8,7 +8,10 @@ from .models import (
     ColourVariation,
     SizeVariation,
     Address,
-    Payment
+    Payment,
+    Category,
+    Image
+   
     )
 
 
@@ -21,8 +24,9 @@ class AddressAdmin(admin.ModelAdmin):
         'address_type',
     ]
 
-
+admin.site.register(Category)
 admin.site.register(Product)
+admin.site.register(Image)
 admin.site.register(OrderItem)
 admin.site.register(Order)
 admin.site.register(ColourVariation)

@@ -9,14 +9,14 @@ from .mixins import StaffUserMixin
 class StaffView(LoginRequiredMixin, generic.ListView):
     template_name = 'staff/staff.html'
     queryset = Order.objects.filter(ordered=True).order_by('-ordered_date')
-    paginate_by = 20
+    paginate_by = 2
     context_object_name = 'orders'
 
 
 class ProductListView(LoginRequiredMixin, StaffUserMixin, generic.ListView):
     template_name = 'staff/product_list.html'
     queryset = Product.objects.all()
-    paginate_by = 1
+    paginate_by = 2
     context_object_name = 'products'
 
 

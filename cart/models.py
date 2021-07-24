@@ -4,9 +4,22 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
 from django.shortcuts import reverse
+from django.forms import ModelForm
+
 
 User = get_user_model()
 
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return self.name
+
+        
 class Address(models.Model):
     ADDRESS_CHOICES = (
         ('B', 'Billing'),
@@ -54,6 +67,10 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=False) 
+    primary_category = models.ForeignKey(
+        Category, related_name='primary_products', blank=True, null=True, on_delete=models.CASCADE)
+    secondary_categories = models.ManyToManyField(Category, blank=True)
+    stock = models.IntegerField(default=0)
     
     def __str__(self):
         return self.title
@@ -69,7 +86,56 @@ class Product(models.Model):
 
     def get_delete_url(self):
         return reverse("staff:product-delete", kwargs={'pk': self.pk})
+
+    @property
+    def in_stock(self):
+        return self.stock > 0
         
+
+class Image(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200, blank=True)
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except Url.DoesNotExist:
+            url = ''
+        print('URL:', url)
+        return url
+
+
+class Comment(models.Model):
+    STATUS = (
+        ('New', 'New'),
+        ('True', 'True'),
+        ('False', 'False'),
+    )
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    subject = models.CharField(max_length=50, blank=True)
+    comment = models.CharField(max_length=250, blank=True)
+    rate = models.IntegerField(default=1)
+    ip = models.CharField(max_length=20, blank=True)
+    status = models.CharField(max_length=10, choices=STATUS, default='New')
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.subject
+
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['subject', 'comment', 'rate']
+
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(

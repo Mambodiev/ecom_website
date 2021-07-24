@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load blog_tags %}
 {% block content %}
 
 <div class="bg-white py-3">
@@ -17,32 +18,94 @@
 
 <div class="row">
   <div class="col-sm-6">
-    <div class="row">
-      <div class="col-lg-12">
-        <img id="featured" src="{{product.featured.url}}" class="img-fluid">
-        <div class="bs-example">
-          <div id="slide-wrapper">
-            <img id="slideLeft" class="arrow" src = "{% static 'fonts/bootstrap-icons/arrow-left.svg' %}" alt="arrow-left"/>
-            <div id="slider">
-              {% for image in product.image_set.all %}
-              <img class="thumbnail" src="{{image.imageURL}}">
-              {% endfor %}
-            </div>
-            <img id="slideRight" class="arrow" src = "{% static 'fonts/bootstrap-icons/arrow-right.svg' %}" alt="arrow-right"/>
+    <div class="col-lg-11 mx-auto">
+      <img id="featured" src="{{product.featured.url}}" class="img-fluid">
+      <div class="bs-example">
+        <div class="col-lg-12 mx-auto" id="slide-wrapper">
+          <img id="slideLeft" class="arrow" src = "{% static 'fonts/bootstrap-icons/arrow-left.svg' %}" alt="arrow-left"/>
+          <div id="slider">
+            {% for image in product.image_set.all %}
+            <img class="thumbnail" src="{{image.imageURL}}">
+            {% endfor %}
           </div>
+          <img id="slideRight" class="arrow" src = "{% static 'fonts/bootstrap-icons/arrow-right.svg' %}" alt="arrow-right"/>
         </div>
       </div>
-    </div> 
+    </div>
   </div> 
         
   <div class=" col-sm-6">
     <h1 class="text-black">{{ product.title }}</h1><br>
-    <h5>{{ product.description }}</h5>
+    <h5>{{ product.description }}</h5><br>
+    <h3>
+      US  ${{ product.get_price }}
+      <del><small class="text-muted ml-3">$113</small><del>
+    </h3><br><hr>
+    <h5 class='text-muted'>Available stock: {{ product.stock }} Units</h5><br>
+    {% if product.in_stock %}
+
     <form method="POST">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <button type="submit" class="btn btn-primary btn-sm btn-block addtocart" id="addtocart">{% trans "Add to cart" %}</button>
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="col-4 col-sm-3">
+            {{ form.colour|as_crispy_field }}
+          </div>
+          <div class="col-4 col-sm-3" id="qty">
+            {{ form.size|as_crispy_field }}
+          </div>            
+        </div>
+        <div class="form-row">
+          <div class="col-2 col-sm-3">
+            {{ form.quantity|as_crispy_field }}
+          </div>
+          <div class="col-10 col-sm-9">
+            <button type="submit" class="btn btn-primary btn-sm btn-block addtocart" id="addtocart">{% trans "Add to cart" %}</button>
+          </div>
+        </div>
     </form><br>
+    {% else %}
+    <h5>This item is out of stock</h5>
+    {% endif %}
   </div>
 </div><br><br>
+
+<!-- most you may also want -->
+<section class="pt-0">
+  <h4 class="CustomerReview text-center my-5">{% trans "You may also want" %}</h4>
+    {% show_latest_products %}          
+</section>
+<!-- end most you may also want -->
+
+<script>
+
+let thumbnails = document.getElementsByClassName('thumbnail')
+			let activeImages = document.getElementsByClassName('active')
+			for (var i=0; i < thumbnails.length; i++){
+				thumbnails[i].addEventListener('mouseover', function(){
+
+					if (activeImages.length > 0){
+						activeImages[0].classList.remove('active')
+					}
+				
+					this.classList.add('active')
+					document.getElementById('featured').src = this.src
+				})
+
+
+			}
+
+			const buttonRight = document.getElementById('slideRight');
+			const buttonLeft = document.getElementById('slideLeft');
+
+
+			buttonRight.addEventListener('click', function(){
+				document.getElementById('slider').scrollLeft += 180;
+		    })
+
+
+
+		    buttonLeft.addEventListener('click', function(){
+		      document.getElementById('slider').scrollLeft -= 180;
+		    })
+</script>
 {% endblock content %}

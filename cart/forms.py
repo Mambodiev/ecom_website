@@ -14,6 +14,7 @@ User = get_user_model()
 class AddToCartForm(forms.ModelForm):
     colour = forms.ModelChoiceField(queryset=ColourVariation.objects.none(), empty_label=None, label=_('colour'))
     size = forms.ModelChoiceField(queryset=SizeVariation.objects.none(), empty_label=None, label=_('size'))
+    quantity = forms.IntegerField(min_value=1, initial=1, label=_('quantity'))
 
 
     class Meta:
@@ -27,6 +28,14 @@ class AddToCartForm(forms.ModelForm):
 
         self.fields['colour'].queryset = product.available_colours.all()
         self.fields['size'].queryset = product.available_sizes.all()
+
+    def clean(self):
+        product_id = self.product_id
+        product = Product.objects.get(id=self.product_id)
+        quantity = self.cleaned_data['quantity']
+        if product.stock < quantity:
+            raise forms.ValidationError(
+                f"The maximum stock available is {product.stock}")
 
 
 class AddressForm(forms.Form):

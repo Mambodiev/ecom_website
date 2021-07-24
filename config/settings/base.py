@@ -45,10 +45,13 @@ THIRD_PARTY_APPS = [
     "crispy_forms",
     "allauth",
     "allauth.account",
+    'allauth.socialaccount.providers.google',
     "allauth.socialaccount",
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 LOCAL_APPS = [
@@ -155,7 +158,9 @@ CSRF_COOKIE_HTTPONLY = True
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = "DENY"
 
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend'
+
+# EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 EMAIL_TIMEOUT = 5
 ADMIN_URL = "admin/"
 ADMINS = [("""Diev Mambo""", "mambodieu@gmail.com")]
@@ -199,3 +204,14 @@ REST_FRAMEWORK = {
 
 CORS_URLS_REGEX = r"^/api/.*$"
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+CKEDITOR_UPLOAD_PATH = 'images/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}

@@ -18,12 +18,12 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <a href="{% url 'staff:product-list' %}" class='text-primary mb-5'><u>Go back to products</u></a>
+        <a href="{% url 'staff:product-list' %}"><h5>Go back to products</h5></a>
         
         <form class='mt-4' method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form|crispy }}
-            <button type='submit' class='btn btn-primary'>Submit</button>
+            <button type='submit' class='btn btn-primary'>Create</button>
         </form>
     </div>
 </div>
