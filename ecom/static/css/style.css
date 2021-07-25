@@ -340,3 +340,23 @@
   }
 }
 /* end review */
+
+/* change language */
+.selectpicker {
+  font-size: 1.25rem;
+  border: 1px solid #939393; 
+  border-radius: 50px;
+}
+.selectpicker, input:focus{
+  outline: none!important;
+  list-style:none!important;
+  background: white; 
+}
+.selectpicker:hover {
+  border: 2px solid #92a8d1;
+}
+
+.modal-content {
+  margin-top: 5rem!important;
+}
+/* end change language */

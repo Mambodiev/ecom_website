@@ -151,7 +151,8 @@
         </div>
     </div>
     
-  </div>       
+  </div>    
+ 
   {% for comment in product.comment_set.all %}
   <div class="media">
     <img src="{% static 'images/profile/blank-profile-picture-973460_1280.png' %}" class="mr-3 rounded" alt="Sample Image">
@@ -169,7 +170,8 @@
         <h5 class="mt-0">Jhon Carter <small><i>Posted on {{ comment.create_at}}</i></small></h5>
     </div>
   </div><hr><br>
-  {% endfor %}        
+  {% endfor %} 
+     
 <!-- end comment -->
 
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import (
+from cart.models import (
     Payment,
     Product, 
     OrderItem, 
@@ -70,9 +70,9 @@ class ColourVariationAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['subject', 'comment', 'status', 'create_at']
+    list_display = ['subject','comment', 'status','create_at']
     list_filter = ['status']
-    readonly_fields = ('subject', 'comment', 'user', 'product', 'rate', 'id')
+    readonly_fields = ('subject','comment','ip','user','product','rate','id')
 
 
 admin.site.register(Category)
