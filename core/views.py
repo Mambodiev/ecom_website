@@ -7,6 +7,7 @@ from django.shortcuts import reverse
 from django.views import generic
 from django.views.generic.edit import FormView
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 
 from django.core import paginator
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -21,6 +22,24 @@ from core.models import (
                         Shipping_returns,
                         Carousel,
                         )
+
+def change_language(request):
+    response = HttpResponseRedirect('/')
+    if request.method == 'POST':
+        language = request.POST.get('language')
+        if language:
+            if language != settings.LANGUAGE_CODE and [lang for lang in settings.LANGUAGES if lang[0] == language]:
+                redirect_path = f'/{language}/'
+            elif language == settings.LANGUAGE_CODE:
+                redirect_path = '/'
+            else:
+                return response
+            from django.utils import translation
+            translation.activate(language)
+            response = HttpResponseRedirect(redirect_path)
+            response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+    return response
+                       
 
 def home(request):
 

@@ -1,4 +1,5 @@
 from django.utils.translation import gettext_lazy as _
+from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -9,11 +10,18 @@ from django.views.generic import TemplateView
 from rest_framework.authtoken.views import obtain_auth_token
 from django.urls import path, include
 from core import views
-
+from core.views import (
+    change_language,
+)
 
 
 urlpatterns = [
-    # path('', views.HomeView.as_view(), name='home'),
+    path('change_language/',change_language,name='change_language'),
+    path('i18n/', include('django.conf.urls.i18n')),
+]
+
+
+urlpatterns += i18n_patterns(
     path('', views.home, name='home'),
     path(_('contact/'), views.ContactView.as_view(), name='contact'),
     path(_('about/'), views.AboutView.as_view(), name='about'),
@@ -27,8 +35,8 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     path("staff/", include("staff.urls", namespace="staff")),
     path("users/", include("ecom.users.urls", namespace="users")),
-    
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    prefix_default_language=False,
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()
 urlpatterns += [

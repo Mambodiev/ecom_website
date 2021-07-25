@@ -11,6 +11,7 @@ from .models import Product, OrderItem, Address, Payment, Order, Category, Comme
 from .utils import get_or_set_order_session
 from .forms import AddToCartForm, AddressForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils.translation import gettext as _
 from django.db.models import Q
 
 

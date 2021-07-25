@@ -1,6 +1,4 @@
-"""
-Base settings to build other settings files upon.
-"""
+from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 
 import environ
@@ -15,7 +13,7 @@ if READ_DOT_ENV_FILE:
 
 DEBUG = env.bool("DJANGO_DEBUG", False)
 TIME_ZONE = "UTC"
-LANGUAGE_CODE = "en-us"
+# LANGUAGE_CODE = "en-us"
 SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
@@ -52,6 +50,7 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     'ckeditor',
     'ckeditor_uploader',
+    'modeltranslation',
 ]
 
 LOCAL_APPS = [
@@ -149,6 +148,25 @@ TEMPLATES = [
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+LANGUAGE_CODE = 'en'
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('fr', _('French')),
+]
+
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'cart.translation',
+    # 'core.translation',
+)
+
+
+# LOCALE_PATHS = (
+#     os.path.join(BASE_DIR, 'locale'),
+#     os.path.join(BASE_DIR, 'cart/locale/'),
+#     os.path.join(BASE_DIR, 'core/locale/'),
+# )
 
 
 FIXTURE_DIRS = (str(APPS_DIR / "fixtures"),)

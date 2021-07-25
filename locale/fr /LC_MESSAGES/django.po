@@ -1,0 +1,571 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-25 08:15-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: config/settings/base.py:155
+msgid "English"
+msgstr ""
+
+#: config/settings/base.py:156
+msgid "French"
+msgstr ""
+
+#: config/urls.py:26
+msgid "contact/"
+msgstr ""
+
+#: config/urls.py:27
+msgid "about/"
+msgstr ""
+
+#: config/urls.py:28
+msgid "privacy_policy/"
+msgstr ""
+
+#: config/urls.py:29
+msgid "shipping_returns/"
+msgstr ""
+
+#: config/urls.py:30
+msgid "faq/"
+msgstr ""
+
+#: config/urls.py:31
+msgid "terms_of_use/"
+msgstr ""
+
+#: ecom/templates/about.html:11 ecom/templates/cart/cart.html:9
+#: ecom/templates/cart/checkout.html:10
+#: ecom/templates/cart/product_detail.html:11
+#: ecom/templates/cart/product_list.html:10 ecom/templates/contact.html:10
+#: ecom/templates/faq.html:11 ecom/templates/navbar.html:5
+#: ecom/templates/privacy_policy.html:11
+#: ecom/templates/shipping_returns.html:11
+#: ecom/templates/staff/product_create.html:10
+#: ecom/templates/staff/product_delete.html:10
+#: ecom/templates/staff/product_list.html:9
+#: ecom/templates/staff/product_update.html:10
+#: ecom/templates/staff/staff.html:8 ecom/templates/terms_of_use.html:11
+#: src/ecom/templates/cart/product_detail.html:10
+msgid "Home"
+msgstr "Accueil"
+
+#: ecom/templates/about.html:13 ecom/templates/navbar.html:11
+msgid "About"
+msgstr "A propos"
+
+#: ecom/templates/account/account_inactive.html:5
+#: ecom/templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr ""
+
+#: ecom/templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr ""
+
+#: ecom/templates/account/email.html:7
+msgid "Account"
+msgstr ""
+
+#: ecom/templates/account/email.html:10
+msgid "E-mail Addresses"
+msgstr ""
+
+#: ecom/templates/account/email.html:13
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: ecom/templates/account/email.html:27
+msgid "Verified"
+msgstr ""
+
+#: ecom/templates/account/email.html:29
+msgid "Unverified"
+msgstr ""
+
+#: ecom/templates/account/email.html:31
+msgid "Primary"
+msgstr ""
+
+#: ecom/templates/account/email.html:37
+msgid "Make Primary"
+msgstr ""
+
+#: ecom/templates/account/email.html:38
+msgid "Re-send Verification"
+msgstr ""
+
+#: ecom/templates/account/email.html:39
+msgid "Remove"
+msgstr ""
+
+#: ecom/templates/account/email.html:46
+msgid "Warning:"
+msgstr ""
+
+#: ecom/templates/account/email.html:46
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: ecom/templates/account/email.html:51
+msgid "Add E-mail Address"
+msgstr ""
+
+#: ecom/templates/account/email.html:56
+msgid "Add E-mail"
+msgstr ""
+
+#: ecom/templates/account/email.html:66
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: ecom/templates/account/email_confirm.html:6
+#: ecom/templates/account/email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: ecom/templates/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+
+#: ecom/templates/account/email_confirm.html:20
+msgid "Confirm"
+msgstr ""
+
+#: ecom/templates/account/email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+
+#: ecom/templates/account/login.html:11 ecom/templates/account/login.html:21
+msgid "Sign in"
+msgstr ""
+
+#: ecom/templates/account/login.html:26
+msgid "Forgot password?"
+msgstr ""
+
+#: ecom/templates/account/login.html:29
+msgid "Create new account?"
+msgstr ""
+
+#: ecom/templates/account/logout.html:5 ecom/templates/account/logout.html:8
+#: ecom/templates/account/logout.html:17 ecom/templates/footer.html:27
+msgid "Sign Out"
+msgstr ""
+
+#: ecom/templates/account/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: ecom/templates/account/password_change.html:6
+#: ecom/templates/account/password_change.html:9
+#: ecom/templates/account/password_change.html:14
+#: ecom/templates/account/password_reset_from_key.html:5
+#: ecom/templates/account/password_reset_from_key.html:8
+#: ecom/templates/account/password_reset_from_key_done.html:4
+#: ecom/templates/account/password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr ""
+
+#: ecom/templates/account/password_reset.html:7
+#: ecom/templates/account/password_reset.html:13
+#: ecom/templates/account/password_reset_done.html:6
+#: ecom/templates/account/password_reset_done.html:9
+msgid "Password Reset"
+msgstr ""
+
+#: ecom/templates/account/password_reset.html:18
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: ecom/templates/account/password_reset.html:23
+msgid "Reset My Password"
+msgstr ""
+
+#: ecom/templates/account/password_reset.html:25
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: ecom/templates/account/password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: ecom/templates/account/password_reset_from_key.html:8
+msgid "Bad Token"
+msgstr ""
+
+#: ecom/templates/account/password_reset_from_key.html:12
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+
+#: ecom/templates/account/password_reset_from_key.html:18
+msgid "change password"
+msgstr ""
+
+#: ecom/templates/account/password_reset_from_key.html:21
+#: ecom/templates/account/password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr ""
+
+#: ecom/templates/account/password_set.html:6
+#: ecom/templates/account/password_set.html:9
+#: ecom/templates/account/password_set.html:14
+msgid "Set Password"
+msgstr ""
+
+#: ecom/templates/account/signup_closed.html:5
+#: ecom/templates/account/signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr ""
+
+#: ecom/templates/account/signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: ecom/templates/account/verification_sent.html:5
+#: ecom/templates/account/verification_sent.html:8
+#: ecom/templates/account/verified_email_required.html:5
+#: ecom/templates/account/verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: ecom/templates/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: ecom/templates/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+
+#: ecom/templates/account/verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: ecom/templates/account/verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+
+#: ecom/templates/cart/cart.html:11 ecom/templates/cart/checkout.html:11
+msgid "Cart"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:26 ecom/templates/cart/checkout.html:44
+#: ecom/templates/staff/product_list.html:24
+msgid "Image"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:27 ecom/templates/cart/checkout.html:45
+#: ecom/templates/staff/product_list.html:25
+msgid "Product"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:28 ecom/templates/staff/product_list.html:26
+msgid "Price"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:29
+msgid "Quantity"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:30 ecom/templates/cart/cart.html:103
+#: ecom/templates/cart/checkout.html:46
+msgid "Total"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:31 ecom/templates/staff/product_list.html:27
+msgid "Actions"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:42
+msgid "Size"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:43
+msgid "Colour"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:70
+msgid "There are no items in your cart."
+msgstr ""
+
+#: ecom/templates/cart/cart.html:71 ecom/templates/cart/cart.html:84
+msgid "Continue shopping"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:93
+msgid "Cart Totals"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:97 ecom/templates/cart/checkout.html:68
+msgid "Subtotal"
+msgstr ""
+
+#: ecom/templates/cart/cart.html:110
+msgid "Proceed to checkout"
+msgstr ""
+
+#: ecom/templates/cart/checkout.html:12
+msgid "Checkout"
+msgstr ""
+
+#: ecom/templates/cart/checkout.html:24
+msgid "Login"
+msgstr ""
+
+#: ecom/templates/cart/checkout.html:24
+msgid "or"
+msgstr ""
+
+#: ecom/templates/cart/checkout.html:24
+msgid "Signup"
+msgstr ""
+
+#: ecom/templates/cart/checkout.html:28
+#, python-format
+msgid "90%% complete"
+msgstr ""
+
+#: ecom/templates/cart/checkout.html:38
+msgid "Your Order"
+msgstr ""
+
+#: ecom/templates/cart/checkout.html:72
+msgid "You Pay"
+msgstr ""
+
+#: ecom/templates/cart/checkout.html:83
+msgid "Billing Details"
+msgstr ""
+
+#: ecom/templates/cart/checkout.html:125
+msgid "Proceed to payment"
+msgstr ""
+
+#: ecom/templates/cart/product/latest_product.html:24
+#: ecom/templates/cart/product_list.html:41 ecom/templates/index.html:78
+#: ecom/templates/index.html:118
+msgid "Add to Cart"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:46
+msgid "Review(s) / Add Review"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:70
+msgid "Add to cart"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:82
+msgid "Customer Reviews"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:91
+msgid "Reviews"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:95
+msgid "Write Review"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:109
+msgid "subject"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:116
+msgid "Review"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:125
+msgid "Please rate"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:140
+msgid "Post Review"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:143
+msgid "You must be logged in to post a review"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:178
+msgid "You may also want"
+msgstr ""
+
+#: ecom/templates/cart/product_list.html:12
+msgid "shop"
+msgstr ""
+
+#: ecom/templates/cart/product_list.html:79
+msgid "Categories"
+msgstr ""
+
+#: ecom/templates/contact.html:12 ecom/templates/navbar.html:14
+msgid "Contact"
+msgstr ""
+
+#: ecom/templates/contact.html:19
+msgid "Get in touch"
+msgstr ""
+
+#: ecom/templates/contact.html:25
+msgid "Submit message"
+msgstr ""
+
+#: ecom/templates/faq.html:13
+msgid "frequently asked questions"
+msgstr ""
+
+#: ecom/templates/footer.html:26
+msgid "My Profile"
+msgstr ""
+
+#: ecom/templates/footer.html:29
+msgid "Sign Up"
+msgstr ""
+
+#: ecom/templates/footer.html:30
+msgid "Sign In"
+msgstr ""
+
+#: ecom/templates/footer.html:37
+msgid "About us"
+msgstr ""
+
+#: ecom/templates/footer.html:38
+msgid "Privacy "
+msgstr ""
+
+#: ecom/templates/footer.html:39
+msgid "Terms of Use"
+msgstr ""
+
+#: ecom/templates/footer.html:40
+msgid "Shipping "
+msgstr ""
+
+#: ecom/templates/footer.html:41
+msgid "Faq"
+msgstr ""
+
+#: ecom/templates/index.html:39
+msgid "Previous"
+msgstr ""
+
+#: ecom/templates/index.html:43
+msgid " Next"
+msgstr ""
+
+#: ecom/templates/index.html:53 ecom/templates/index.html:93
+msgid "Latest Products"
+msgstr ""
+
+#: ecom/templates/navbar.html:8
+msgid "Shop"
+msgstr ""
+
+#: ecom/templates/navbar.html:18
+msgid "Staff"
+msgstr ""
+
+#: ecom/templates/privacy_policy.html:13
+msgid "Privacy Policy & Returns"
+msgstr ""
+
+#: ecom/templates/shipping_returns.html:13
+msgid "Shipping & Returns"
+msgstr ""
+
+#: ecom/templates/staff/product_create.html:12
+msgid "Create a product"
+msgstr ""
+
+#: ecom/templates/staff/product_delete.html:12
+msgid "Delete a product"
+msgstr ""
+
+#: ecom/templates/staff/product_list.html:11
+msgid "Staff page"
+msgstr ""
+
+#: ecom/templates/staff/product_update.html:12
+msgid "Update a product"
+msgstr ""
+
+#: ecom/templates/staff/staff.html:10
+msgid "Staff Page"
+msgstr ""
+
+#: ecom/templates/terms_of_use.html:13
+msgid "Terms of use"
+msgstr ""
+
+#: ecom/users/admin.py:18
+msgid "Personal info"
+msgstr ""
+
+#: ecom/users/admin.py:20
+msgid "Permissions"
+msgstr ""
+
+#: ecom/users/admin.py:31
+msgid "Important dates"
+msgstr ""
+
+#: ecom/users/apps.py:7
+msgid "Users"
+msgstr ""
+
+#: ecom/users/forms.py:18 ecom/users/tests/test_forms.py:39
+msgid "This username has already been taken."
+msgstr ""
+
+#: ecom/users/models.py:11
+msgid "Name of User"
+msgstr ""
+
+#: ecom/users/views.py:34
+msgid "Information successfully updated"
+msgstr ""
