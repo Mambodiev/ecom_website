@@ -4,6 +4,7 @@
 {% block title %}User: {{ object.username }}{% endblock %}
 
 {% block content %}
+<div class="container">
   <div class="row">
     <div class="col-sm-12">
 
@@ -14,44 +15,43 @@
     </div>
   </div>
 
-{% if object == request.user %}
-<!-- Action buttons -->
-<div class="row">
-
-  <div class="col-sm-12">
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'users:update' %}" role="button">My Info</a>
-    <a class="btn btn-outline-primary btn-sm" href="{% url 'account_email' %}" role="button">E-Mail</a>
-    <hr/>
-    <h5 class="card-title">Your orders</h5>
-    <div class="table-responsive">
-        <table class="table border">
-            <thead>
-                <tr>
-                    <th>Reference No.</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Payment Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for order in orders %}
-                <tr>
-                    <td><a href="{% url 'cart:order-detail' order.pk %}">#{{ order.reference_number }}</a></td>
-                    <td>{{ order.ordered_date }}</td>
-                    <td>${{ order.get_total }}</td>
-                    <td>{% if order.ordered %}Paid{% else %}Not paid{% endif %}</td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="4">You haven't made any orders</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+  {% if object == request.user %}
+  <!-- Action buttons -->
+  <div class="row">
+    <div class="col-sm-12">
+      <a class="btn btn-outline-primary btn-sm" href="{% url 'users:update' %}" role="button">My Info</a>
+      <a class="btn btn-outline-primary btn-sm" href="{% url 'account_email' %}" role="button">E-Mail</a>
+      <hr/>
+      <h5 class="card-title">Your orders</h5>
+      <div class="table-responsive">
+          <table class="table border">
+              <thead>
+                  <tr>
+                      <th>Reference No.</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th>Payment Status</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for order in orders %}
+                  <tr>
+                      <td><a href="{% url 'cart:order-detail' order.pk %}">#{{ order.reference_number }}</a></td>
+                      <td>{{ order.ordered_date }}</td>
+                      <td>${{ order.get_total }}</td>
+                      <td>{% if order.ordered %}Paid{% else %}Not paid{% endif %}</td>
+                  </tr>
+                  {% empty %}
+                  <tr>
+                      <td colspan="4">You haven't made any orders</td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
     </div>
   </div>
-
-</div>
-<!-- End Action buttons -->
-{% endif %}
+  <!-- End Action buttons -->
+  {% endif %}
+</div>  
 {% endblock content %}

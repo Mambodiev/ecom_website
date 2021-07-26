@@ -34,6 +34,7 @@ urlpatterns += i18n_patterns(
     path("cart/", include("cart.urls", namespace='cart')),
     path(settings.ADMIN_URL, admin.site.urls),
     path("staff/", include("staff.urls", namespace="staff")),
+    path('rosetta/', include('rosetta.urls')),
     path("users/", include("ecom.users.urls", namespace="users")),
     prefix_default_language=False,
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

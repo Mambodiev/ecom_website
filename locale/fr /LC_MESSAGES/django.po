@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-25 08:15-0700\n"
+"POT-Creation-Date: 2021-07-26 02:21-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: config/settings/base.py:155
+#: config/settings/base.py:156
 msgid "English"
 msgstr ""
 
-#: config/settings/base.py:156
+#: config/settings/base.py:157
 msgid "French"
 msgstr ""
 
@@ -288,6 +288,18 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
+#: ecom/templates/base.html:39
+msgid "Free Worldwide Shipping"
+msgstr "Livraison gratuite à travers le monde"
+
+#: ecom/templates/base.html:42
+msgid "Secure Online Payment"
+msgstr "Paiement en ligne sécurisé"
+
+#: ecom/templates/base.html:45
+msgid "We return money within 30 days"
+msgstr "We return money within 30 days"
+
 #: ecom/templates/cart/cart.html:11 ecom/templates/cart/checkout.html:11
 msgid "Cart"
 msgstr ""
@@ -394,43 +406,59 @@ msgstr ""
 msgid "Review(s) / Add Review"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:70
+#: ecom/templates/cart/product_detail.html:56
+msgid "Available stock:"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:56
+msgid "Units"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:75
 msgid "Add to cart"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:82
+#: ecom/templates/cart/product_detail.html:80
+msgid "This item is out of stock"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:88
 msgid "Customer Reviews"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:91
+#: ecom/templates/cart/product_detail.html:97
 msgid "Reviews"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:95
+#: ecom/templates/cart/product_detail.html:101
 msgid "Write Review"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:109
+#: ecom/templates/cart/product_detail.html:115
 msgid "subject"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:116
+#: ecom/templates/cart/product_detail.html:122
 msgid "Review"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:125
+#: ecom/templates/cart/product_detail.html:131
 msgid "Please rate"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:140
+#: ecom/templates/cart/product_detail.html:146
 msgid "Post Review"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:143
+#: ecom/templates/cart/product_detail.html:149
 msgid "You must be logged in to post a review"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:178
+#: ecom/templates/cart/product_detail.html:177
+msgid "Posted on"
+msgstr ""
+
+#: ecom/templates/cart/product_detail.html:190
 msgid "You may also want"
 msgstr ""
 

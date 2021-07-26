@@ -70,10 +70,11 @@ class ColourVariationAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['subject','comment', 'status','create_at']
-    list_filter = ['status']
+    list_display = ['subject','comment','create_at','approved']
+    list_editable = ['approved']
+    list_filter = ['approved']
     readonly_fields = ('subject','comment','ip','user','product','rate','id')
-
+    
 
 admin.site.register(Category)
 admin.site.register(Product,ProductAdmin)

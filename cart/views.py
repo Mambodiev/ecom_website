@@ -108,6 +108,9 @@ class ProductDetailView(generic.FormView):
         return context
 
 
+
+
+
 class CartView(generic.TemplateView):
     template_name = "cart/cart.html"
 

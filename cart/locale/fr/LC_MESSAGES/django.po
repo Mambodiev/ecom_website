@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-25 04:37-0700\n"
+"POT-Creation-Date: 2021-07-26 02:21-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: cart/forms.py:15
 msgid "colour"
-msgstr ""
+msgstr "Couleur"
 
 #: cart/forms.py:16
 msgid "size"
-msgstr ""
+msgstr "Dimension"
 
 #: cart/forms.py:17
 msgid "quantity"
-msgstr ""
+msgstr "Quantité"

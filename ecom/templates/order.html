@@ -2,50 +2,51 @@
 {% load i18n %}
 {% block content %}
 
-<div class="site-section">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <a href="{% url 'users:detail' request.user.username %}"><h5 class='mb-5'>Back to profile</h5></a>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Order: #{{ order.reference_number }}
-                    </h5><br>
-                    <h6 class="card-subtitle mb-2 text-muted">Ordered on: {{ order.ordered_date }}</h6><br>
-                    <div class="table-responsive">
-                        <table class="table border">
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Product</th>
-                                    <th></th>
-                                    <th>Subtotal</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for item in order.items.all %}
-                                <tr>
-                                    <td>
-                                        <img src="{{ item.product.featured.url }}" class="img-fluid" style="max-width: 90px;">
-                                    </td>
-                                    <td>
-                                        {{ item.size.name }}, {{ item.colour.name }} of {{ item.product.title }} x
-                                        {{ item.quantity }}
-                                    </td>
-                                    <td>${{ item.get_total_item_price }}</td>
-                                    <td>${{ order.get_subtotal }}</td>
-                                    <td>${{ order.get_total }}</td>
-                                </tr>
-                                {% endfor %}
-                                
-                            </tbody>
-                        </table>
+<div class="container">
+    <div class="site-section">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <a href="{% url 'users:detail' request.user.username %}"><h5 class='mb-5'>Back to profile</h5></a>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Order: #{{ order.reference_number }}
+                        </h5><br>
+                        <h6 class="card-subtitle mb-2 text-muted">Ordered on: {{ order.ordered_date }}</h6><br>
+                        <div class="table-responsive">
+                            <table class="table border">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Product</th>
+                                        <th></th>
+                                        <th>Subtotal</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in order.items.all %}
+                                    <tr>
+                                        <td>
+                                            <img src="{{ item.product.featured.url }}" class="img-fluid" style="max-width: 90px;">
+                                        </td>
+                                        <td>
+                                            {{ item.size.name }}, {{ item.colour.name }} of {{ item.product.title }} x
+                                            {{ item.quantity }}
+                                        </td>
+                                        <td>${{ item.get_total_item_price }}</td>
+                                        <td>${{ order.get_subtotal }}</td>
+                                        <td>${{ order.get_total }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
+</div> 
 {% endblock content %}

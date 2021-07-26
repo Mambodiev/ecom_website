@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-25 04:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2021-07-26 02:21-0700\n"
+"PO-Revision-Date: 2021-07-26 09:12+0000\n"
+"Last-Translator: b'None None <mambodieu@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: config/settings/base.py:156
 msgid "English"
@@ -26,27 +27,27 @@ msgstr ""
 msgid "French"
 msgstr ""
 
-#: config/urls.py:18
+#: config/urls.py:26
 msgid "contact/"
 msgstr ""
 
-#: config/urls.py:19
+#: config/urls.py:27
 msgid "about/"
-msgstr ""
+msgstr "À propos"
 
-#: config/urls.py:20
+#: config/urls.py:28
 msgid "privacy_policy/"
 msgstr ""
 
-#: config/urls.py:21
+#: config/urls.py:29
 msgid "shipping_returns/"
 msgstr ""
 
-#: config/urls.py:22
+#: config/urls.py:30
 msgid "faq/"
 msgstr ""
 
-#: config/urls.py:23
+#: config/urls.py:31
 msgid "terms_of_use/"
 msgstr ""
 
@@ -54,7 +55,8 @@ msgstr ""
 #: ecom/templates/cart/checkout.html:10
 #: ecom/templates/cart/product_detail.html:11
 #: ecom/templates/cart/product_list.html:10 ecom/templates/contact.html:10
-#: ecom/templates/faq.html:11 ecom/templates/privacy_policy.html:11
+#: ecom/templates/faq.html:11 ecom/templates/navbar.html:5
+#: ecom/templates/privacy_policy.html:11
 #: ecom/templates/shipping_returns.html:11
 #: ecom/templates/staff/product_create.html:10
 #: ecom/templates/staff/product_delete.html:10
@@ -67,7 +69,7 @@ msgstr "Accueil"
 
 #: ecom/templates/about.html:13 ecom/templates/navbar.html:11
 msgid "About"
-msgstr "A Propos"
+msgstr "À propos"
 
 #: ecom/templates/account/account_inactive.html:5
 #: ecom/templates/account/account_inactive.html:8
@@ -288,6 +290,18 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
+#: ecom/templates/base.html:39
+msgid "Free Worldwide Shipping"
+msgstr "Livraison gratuite à travers le monde"
+
+#: ecom/templates/base.html:42
+msgid "Secure Online Payment"
+msgstr "Paiement en ligne sécurisé"
+
+#: ecom/templates/base.html:45
+msgid "We return money within 30 days"
+msgstr "Nous retournons l'argent dans les 30 jours"
+
 #: ecom/templates/cart/cart.html:11 ecom/templates/cart/checkout.html:11
 msgid "Cart"
 msgstr ""
@@ -308,7 +322,7 @@ msgstr ""
 
 #: ecom/templates/cart/cart.html:29
 msgid "Quantity"
-msgstr ""
+msgstr "Quantité"
 
 #: ecom/templates/cart/cart.html:30 ecom/templates/cart/cart.html:103
 #: ecom/templates/cart/checkout.html:46
@@ -321,11 +335,11 @@ msgstr ""
 
 #: ecom/templates/cart/cart.html:42
 msgid "Size"
-msgstr ""
+msgstr "Dimension"
 
 #: ecom/templates/cart/cart.html:43
 msgid "Colour"
-msgstr ""
+msgstr "Couleur"
 
 #: ecom/templates/cart/cart.html:70
 msgid "There are no items in your cart."
@@ -388,51 +402,67 @@ msgstr ""
 #: ecom/templates/cart/product_list.html:41 ecom/templates/index.html:78
 #: ecom/templates/index.html:118
 msgid "Add to Cart"
-msgstr ""
+msgstr "Ajouter au panier"
 
 #: ecom/templates/cart/product_detail.html:46
 msgid "Review(s) / Add Review"
-msgstr ""
+msgstr "Avis / Ajouter un Avis"
 
-#: ecom/templates/cart/product_detail.html:70
+#: ecom/templates/cart/product_detail.html:56
+msgid "Available stock:"
+msgstr "Stock disponible:"
+
+#: ecom/templates/cart/product_detail.html:56
+msgid "Units"
+msgstr "Pièces"
+
+#: ecom/templates/cart/product_detail.html:75
 msgid "Add to cart"
+msgstr "Ajouter au panier"
+
+#: ecom/templates/cart/product_detail.html:80
+msgid "This item is out of stock"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:82
+#: ecom/templates/cart/product_detail.html:88
 msgid "Customer Reviews"
-msgstr ""
+msgstr "Avis des clients"
 
-#: ecom/templates/cart/product_detail.html:91
+#: ecom/templates/cart/product_detail.html:97
 msgid "Reviews"
-msgstr ""
+msgstr "Avis"
 
-#: ecom/templates/cart/product_detail.html:95
+#: ecom/templates/cart/product_detail.html:101
 msgid "Write Review"
-msgstr ""
+msgstr "Laisser un Avis"
 
-#: ecom/templates/cart/product_detail.html:109
+#: ecom/templates/cart/product_detail.html:115
 msgid "subject"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:116
+#: ecom/templates/cart/product_detail.html:122
 msgid "Review"
-msgstr ""
+msgstr "Avis"
 
-#: ecom/templates/cart/product_detail.html:125
+#: ecom/templates/cart/product_detail.html:131
 msgid "Please rate"
 msgstr ""
 
-#: ecom/templates/cart/product_detail.html:140
+#: ecom/templates/cart/product_detail.html:146
 msgid "Post Review"
-msgstr ""
+msgstr "Laisser"
 
-#: ecom/templates/cart/product_detail.html:143
+#: ecom/templates/cart/product_detail.html:149
 msgid "You must be logged in to post a review"
-msgstr ""
+msgstr "Vous devez être connecté pour poster un avis"
 
-#: ecom/templates/cart/product_detail.html:178
+#: ecom/templates/cart/product_detail.html:177
+msgid "Posted on"
+msgstr "Posté le"
+
+#: ecom/templates/cart/product_detail.html:190
 msgid "You may also want"
-msgstr ""
+msgstr "Vous pouvez également vouloir"
 
 #: ecom/templates/cart/product_list.html:12
 msgid "shop"
@@ -444,7 +474,7 @@ msgstr ""
 
 #: ecom/templates/contact.html:12 ecom/templates/navbar.html:14
 msgid "Contact"
-msgstr "Nous Contacter"
+msgstr "Contact"
 
 #: ecom/templates/contact.html:19
 msgid "Get in touch"
@@ -472,7 +502,7 @@ msgstr ""
 
 #: ecom/templates/footer.html:37
 msgid "About us"
-msgstr ""
+msgstr "À propos"
 
 #: ecom/templates/footer.html:38
 msgid "Privacy "
@@ -569,3 +599,8 @@ msgstr ""
 #: ecom/users/views.py:34
 msgid "Information successfully updated"
 msgstr ""
+
+#~ msgid "Available stock: {{ product.stock }} Units"
+#~ msgstr ""
+#~ " Stock disponible\n"
+#~ ": {{ product.stock }} Pièces"

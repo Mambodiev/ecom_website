@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'modeltranslation',
+    'rosetta',
 ]
 
 LOCAL_APPS = [
