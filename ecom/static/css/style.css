@@ -58,6 +58,13 @@
   }
 }
 
+.dropdown-menu {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: 100% !important;
+  width: 100px !important;
+}
+
 .cart-count{
   position: relative;
   left: -7px;
@@ -379,3 +386,24 @@
 }
 /* end change language */
 
+#third{
+  background: url("/static/images/slider/bg.jpg") 100% 0 no-repeat fixed;
+  }
+#third {
+  width: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-attachment: scroll;
+}
+#third{
+min-height:430px;
+}
+
+
+.img, figure {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}

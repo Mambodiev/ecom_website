@@ -4,17 +4,17 @@
 
 {% block content %}
 
-<div class="bg-white py-3">
-    <div class="row">
-        <div class="col-md-12 mb-0">
-            <a href="{% url 'home' %}">{% trans "Home" %}</a><span class="mx-2 mb-0">/</span>
-            <a href="{% url 'cart:summary' %}" class="text-black">{% trans "Cart" %}</a><span class="mx-2 mb-0">/</span>
-            <strong class="text-black">{% trans "Checkout" %}</strong>
+<div class="container">
+    <div class="bg-white py-3">
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                <a href="{% url 'home' %}">{% trans "Home" %}</a><span class="mx-2 mb-0">/</span>
+                <a href="{% url 'cart:summary' %}" class="text-black">{% trans "Cart" %}</a><span class="mx-2 mb-0">/</span>
+                <strong class="text-black">{% trans "Checkout" %}</strong>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="container">
     <div class="site-section">
         {% if not request.user.is_authenticated %}
         <div class="row mb-5">
