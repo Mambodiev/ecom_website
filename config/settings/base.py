@@ -182,7 +182,7 @@ EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend'
 # EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 EMAIL_TIMEOUT = 5
 ADMIN_URL = "admin/"
-ADMINS = [("""Diev Mambo""", "mambodieu@gmail.com")]
+ADMINS = [("""Diev Mambo""", "")]
 MANAGERS = ADMINS
 LOGGING = {
     "version": 1,
